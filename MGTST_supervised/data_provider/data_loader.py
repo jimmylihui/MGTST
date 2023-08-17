@@ -7,7 +7,6 @@ from torch.utils.data import Dataset, DataLoader
 from sklearn.preprocessing import StandardScaler,MinMaxScaler
 from utils.timefeatures import time_features
 import warnings
-from layers.lsqScale import lsqScale
 import matplotlib.pyplot as plt
 warnings.filterwarnings('ignore')
 

@@ -1,4 +1,4 @@
-__all__ = ['MSPTST']
+__all__ = ['MGTST']
 
 # Cell
 from typing import Callable, Optional
@@ -7,7 +7,7 @@ from torch import nn
 from torch import Tensor
 import torch.nn.functional as F
 import numpy as np
-from layers.MSPTST_backbone import MSPTST_backbone
+from MGTST.PatchTST_supervised.layers.MGTST_backbone import MGTST_backbone
 import math
 
 

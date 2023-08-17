@@ -10,7 +10,6 @@ data_dict = {
     'ETTh_all':Dataset_ETT_hour,
     'ETT_all':Dataset_ETT_hour,
     'All':Dataset_ETT_hour,
-    'custom2':Dataset_Custom
 }
 
 
