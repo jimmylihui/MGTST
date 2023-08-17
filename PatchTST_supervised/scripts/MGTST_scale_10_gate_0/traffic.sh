@@ -6,9 +6,9 @@ if [ ! -d "./logs/LongForecasting" ]; then
     mkdir ./logs/LongForecasting
 fi
 seq_len=336
-model_name=MSPTST
+model_name=MGTST
 
-root_path_name=/ssddata/data/jiahuili/PatchTST/all_six_datasets/traffic/
+root_path_name=./all_six_datasets/traffic/
 data_path_name=traffic.csv
 model_id_name=traffic
 data_name=custom
@@ -16,7 +16,7 @@ data_name=custom
 random_seed=2021
 for pred_len in 96 192 336 720
 do
-    python -u /ssddata/data/jiahuili/PatchTST/PatchTST_supervised/run_longExp.py \
+    python -u run_longExp.py \
       --random_seed $random_seed \
       --is_training 1 \
       --root_path $root_path_name \
@@ -48,5 +48,5 @@ do
       --channel_dependent 0\
       --group 30\
       --cuda_devices '3'\
-      --itr 1 --batch_size 24  >/ssddata/data/jiahuili/PatchTST/logs/$model_name'_scale_10_gate_0'$model_id_name'_'$seq_len'_'$pred_len.log 
+      --itr 1 --batch_size 24  >logs/$model_name'_scale_10_gate_0'$model_id_name'_'$seq_len'_'$pred_len.log 
 done

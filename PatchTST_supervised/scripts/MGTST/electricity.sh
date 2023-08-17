@@ -6,18 +6,18 @@ if [ ! -d "./logs/LongForecasting" ]; then
     mkdir ./logs/LongForecasting
 fi
 seq_len=336
-model_name=MSPTST
+model_name=MGTST
 
-root_path_name=/ssddata/data/jiahuili/PatchTST/all_six_datasets/electricity/
+root_path_name=./all_six_datasets/electricity/
 data_path_name=electricity.csv
 model_id_name=Electricity
 data_name=custom
-group=20
+group=107
 random_seed=2021
 n_heads=8
 for pred_len in 96 192 336 720
 do
-    python -u /ssddata/data/jiahuili/PatchTST/PatchTST_supervised/run_longExp.py \
+    python -u run_longExp.py \
       --random_seed $random_seed \
       --is_training 1 \
       --root_path $root_path_name \
@@ -45,5 +45,5 @@ do
       --scale 5\
       --gate 1\
       --group $group\
-      --itr 1 --batch_size 64 --learning_rate 0.001 >/ssddata/data/jiahuili/PatchTST/logs/$model_name'_'$model_id_name'_'$seq_len'_'$pred_len'_'$group'_'$n_heads.log 
+      --itr 1 --batch_size 64 --learning_rate 0.001 >logs/$model_name'_'$model_id_name'_'$seq_len'_'$pred_len'_'$group'_'$n_heads.log 
 done

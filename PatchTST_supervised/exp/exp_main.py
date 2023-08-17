@@ -1,7 +1,8 @@
+from MGTST.PatchTST_supervised.models import MGTST
 from data_provider.data_factory import data_provider
 from exp.exp_basic import Exp_Basic
-from models import Informer, Autoformer, Transformer, DLinear, Linear, NLinear,patch_GRU, PatchTST,nbeats_copy,patch_AGCRN,Patch_MLP,PLinear,CARD,MSPTST,HMSPTST,JTSF,CMSPTST,Patch_ATF,autoPatch_TST,Crossformer
-from models.cross_models import cross_former
+from models import  MGTST
+
 from thop import profile
 from utils.tools import EarlyStopping, adjust_learning_rate, visual, test_params_flop
 from utils.metrics import metric
@@ -28,25 +29,9 @@ class Exp_Main(Exp_Basic):
         
     def _build_model(self):
         model_dict = {
-            'Autoformer': Autoformer,
-            'Transformer': Transformer,
-            'Informer': Informer,
-            'DLinear': DLinear,
-            'NLinear': NLinear,
-            'Linear': Linear,
-            'PatchTST': PatchTST,
-            'Patch_GRU':patch_GRU,
-            'Patch_AGCRN':patch_AGCRN,
-            'Patch_MLP':Patch_MLP,
-            'PLinear':PLinear,
-            'CARD':CARD,
-            'MSPTST':MSPTST,
-            'HMSPTST':HMSPTST,
-            'JTSF':JTSF,
-            'CMSPTST':CMSPTST,
-            'Patch_ATF':Patch_ATF,
-            'autoPatch_TST':autoPatch_TST,
-            'Crossformer':Crossformer,
+            
+            'MGTST':MGTST,
+            
         }
         model = model_dict[self.args.model].Model(self.args).float().to('cuda:0')
         # for p in model.parameters():
