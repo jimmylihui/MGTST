@@ -7,7 +7,7 @@ from torch import nn
 from torch import Tensor
 import torch.nn.functional as F
 import numpy as np
-from MGTST.PatchTST_supervised.layers.MGTST_backbone import MGTST_backbone
+from MGTST.layers.MGTST_backbone import MGTST_backbone
 import math
 
 

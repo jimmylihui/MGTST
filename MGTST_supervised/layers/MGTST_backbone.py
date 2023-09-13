@@ -1,4 +1,4 @@
-__all__ = ['MSPTST_backbone']
+__all__ = ['MGTST_backbone']
 
 # Cell
 from typing import Callable, Optional
@@ -9,14 +9,13 @@ import torch.nn.functional as F
 import numpy as np
 from einops import repeat
 #from collections import OrderedDict
-from layers.PatchTST_layers import *
+from MGTST.MGTST_supervised.layers.MGTST_layers import *
 from layers.RevIN import RevIN
 from torch import einsum
-from layers.TLN import SVD_Block
 from einops import rearrange
-from layers.softmax_one.softmax_one import softmax_one
+
 # Cell
-class MSPTST_backbone(nn.Module):
+class MGTST_backbone(nn.Module):
     def __init__(self, configs,scale,gate,c_in:int, context_window:int, target_window:int, patch_len:int, stride:int, max_seq_len:Optional[int]=1024, 
                  n_layers:int=3, d_model=128, n_heads=16, d_k:Optional[int]=None, d_v:Optional[int]=None,
                  d_ff:int=256, norm:str='BatchNorm', attn_dropout:float=0., dropout:float=0., act:str="gelu", key_padding_mask:bool='auto',
