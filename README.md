@@ -12,7 +12,7 @@
 
 
 ## Getting Started
-![alt text]()
+![alt text](https://github.com/jimmylihui/MGTST/blob/main/model.png)
 
 
 
