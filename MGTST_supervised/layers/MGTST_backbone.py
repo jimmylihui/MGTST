@@ -9,7 +9,7 @@ import torch.nn.functional as F
 import numpy as np
 from einops import repeat
 #from collections import OrderedDict
-from MGTST.MGTST_supervised.layers.MGTST_layers import *
+from layers.MGTST_layers import *
 from layers.RevIN import RevIN
 from torch import einsum
 from einops import rearrange
