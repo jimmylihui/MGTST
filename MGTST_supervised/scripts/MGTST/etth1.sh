@@ -16,7 +16,7 @@ data_name=ETTh1
 random_seed=42
 for pred_len in 96 192 336 720
 do
-    python -u run_longExp.py \
+    python -u /ssddata/data/jiahuili/MGTST/MGTST_supervised/run_longExp.py \
       --random_seed $random_seed \
       --is_training 1 \
       --root_path $root_path_name \

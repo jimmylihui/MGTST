@@ -155,13 +155,7 @@ class MGTST_backbone(nn.Module):
                 cls=torch.cat([cls_0,cls_1],dim=1)
 
                 cls=self.linear[i](cls)
-                # cls=repeat(cls,'b n 1 p->b n d p',d=z.shape[2])
                 
-                
-                
-               
-                # z=0.5*torch.sigmoid(cls)*z+0.5*z
-                # original=z
                 z=torch.sigmoid(cls)*z
                 
             else:

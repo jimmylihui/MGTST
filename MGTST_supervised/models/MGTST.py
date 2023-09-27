@@ -7,7 +7,7 @@ from torch import nn
 from torch import Tensor
 import torch.nn.functional as F
 import numpy as np
-from MGTST.layers.MGTST_backbone import MGTST_backbone
+from layers.MGTST_backbone import MGTST_backbone
 import math
 
 
@@ -101,5 +101,3 @@ class Model(nn.Module):
     
     def get_gate_attn(self):
         return self.attn_gate_collect
-
-
